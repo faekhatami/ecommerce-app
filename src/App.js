@@ -1,19 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Products from "./pages/Products";
+import Navbar from "./components/Navbar";
 
-export const cartSlice = createSlice({
-  name: "cart",
-  initialState: {
-    items: [],
-  },
-  reducers: {
-    addItem: (state, action) => {
-      state.items.push(action.payload);
-    },
-    removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
-    },
-  },
-});
+function App() {
+  return (
+    <Router basename="/ecommerce-app">
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/products" component={Products} />
+        <Route path="/cart" component={Cart} />
+      </Switch>
+    </Router>
+  );
+}
 
-export const { addItem, removeItem } = cartSlice.actions;
-export default cartSlice.reducer;
+export default App;
