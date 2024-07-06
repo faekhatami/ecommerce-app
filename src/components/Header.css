@@ -1,0 +1,43 @@
+/* src/components/Header.css */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* src/pages/ProductList.css */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(33.333% - 40px);
+}
+
+.product-item img {
+    max-width: 100%;
+}
